@@ -183,7 +183,9 @@ class CupertinoListTile(ConstrainedControl):
     # leading_size
     @property
     def leading_size(self) -> OptionalNumber:
-        return self._get_attr("leadingSize", data_type="float", def_value=30.0)
+        return self._get_attr(
+            "leadingSize", data_type="float", def_value=30.0 if self.notched else 28.0
+        )
 
     @leading_size.setter
     def leading_size(self, value: OptionalNumber):
@@ -192,7 +194,11 @@ class CupertinoListTile(ConstrainedControl):
     # leading_to_title
     @property
     def leading_to_title(self) -> OptionalNumber:
-        return self._get_attr("leadingToTitle", data_type="float", def_value=12.0)
+        return self._get_attr(
+            "leadingToTitle",
+            data_type="float",
+            def_value=12.0 if self.notched else 16.0,
+        )
 
     @leading_to_title.setter
     def leading_to_title(self, value: OptionalNumber):
